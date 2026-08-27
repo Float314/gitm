@@ -17,6 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up MSVC dev environment
+        if: matrix.os == 'windows-latest'
+        uses: ilammy/msvc-dev-cmd@v1
+        
       - name: Install vcpkg 
         uses: lukka/run-vcpkg@v11
         vcpkgGitCommitId: '9e593bb18ea69cc5095e012465dcd675a822ed0d'
