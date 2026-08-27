@@ -1,0 +1,9 @@
+build/
+.cache/ 
+
+# clang 
+.clang-format
+# gitm manifest 
+gitm.manifest 
+
+*.gitm
