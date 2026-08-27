@@ -20,10 +20,9 @@ jobs:
       - name: Set up MSVC dev environment
         if: matrix.os == 'windows-latest'
         uses: ilammy/msvc-dev-cmd@v1
-        
+
       - name: Install vcpkg 
         uses: lukka/run-vcpkg@v11
-        vcpkgGitCommitId: '9e593bb18ea69cc5095e012465dcd675a822ed0d'
 
       - name: Configure
         run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="${{ runner.os == 'Windows' && env.VCPKG_INSTALLATION_ROOT || env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake"
